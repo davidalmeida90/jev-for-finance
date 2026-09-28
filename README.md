@@ -3,9 +3,10 @@
 [Jev](https://typesafe.ai) applied to financial research, starting with RAG over SEC filings. Retrieval is treated as a
 decision: code finds the filing, search keeps 30 passages, Jev picks the one that answers, and an LLM reads two. This
 repository holds that pipeline (Jev RAG), a benchmark against an agentic RAG harness on 50 analyst questions about
-four 10-Ks, every log behind the numbers, and the [full write-up](article/README.md).
+four 10-Ks, and every log behind the numbers. Full write-up:
+[Is Jev efficient for RAG?](https://davidariasfinance.com/research/is-jev-efficient-for-rag/)
 
-![Jev RAG: search keeps 30 passages, Jev picks two, the LLM writes the answer](article/img/pipeline.jpg)
+![Jev RAG: search keeps 30 passages, Jev picks two, the LLM writes the answer](assets/pipeline.jpg)
 
 ## Results
 
@@ -116,7 +117,7 @@ benchmark/
   bench_cache/              filing texts, EDGAR indexes, cached model scores
   e2e_log*/                 every API call and every graded answer
   *_summary.json            the tables above, as JSON
-article/                    the write-up, with figures
+assets/                     README figure
 ```
 
 ## Limits
@@ -134,7 +135,7 @@ article/                    the write-up, with figures
 
 ## Data and licenses
 
-- Code: [Apache 2.0](LICENSE). Write-up and figures in `article/`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- Code: [MIT](LICENSE).
 - Filings in `benchmark/bench_cache/filings/` come from SEC EDGAR and are public domain.
 - Logs hold outputs of Jev, DeepSeek Flash, Qwen, GPT-5 nano and Gemini, published for reproducibility.
   TypeSafe's terms forbid using Jev output to train a model that imitates it.
