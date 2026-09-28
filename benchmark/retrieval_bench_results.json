@@ -1,0 +1,64 @@
+{
+ "rows": [
+  [
+   "BM25",
+   0.55,
+   0.75,
+   0.6672222222222223
+  ],
+  [
+   "e5 embeddings",
+   0.75,
+   0.85,
+   0.7916666666666667
+  ],
+  [
+   "hybrid (BM25 + e5, RRF)",
+   0.55,
+   0.85,
+   0.6916666666666667
+  ],
+  [
+   "hybrid top 30 + MiniLM cross-encoder",
+   0.65,
+   0.8,
+   0.7430555555555556
+  ],
+  [
+   "hybrid top 30 + bge-reranker-base",
+   0.55,
+   0.8,
+   0.6870833333333333
+  ],
+  [
+   "hybrid top 30 + Jev (1 question per passage)",
+   0.95,
+   1.0,
+   0.975
+  ],
+  [
+   "Jev over all 145 passages (no first stage)",
+   0.95,
+   1.0,
+   0.975
+  ],
+  [
+   "hybrid top 30 + Jev Choice (1 call per question)",
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "hybrid top 30 + DeepSeek Flash (1 call per question)",
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "shortlist_recall": 1.0,
+ "routing": {
+  "kept_per_q": 2.4,
+  "precision": 0.7708333333333334,
+  "questions_with_gold_kept": 0.95
+ }
+}

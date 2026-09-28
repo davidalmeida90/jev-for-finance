@@ -1,0 +1,6 @@
+# jev_rag.py and the benchmark scripts use the standard library for HTTP, BM25 and EDGAR.
+python-dotenv>=1.0        # reads .env
+
+# Vector search (e5) and the local rerankers. Optional for jev_rag.py, needed by the benchmark.
+torch>=2.2
+transformers>=4.44

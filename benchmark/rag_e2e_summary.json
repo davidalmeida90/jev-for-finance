@@ -1,0 +1,32 @@
+{
+ "agentic_rag": {
+  "n": 20,
+  "right": 17,
+  "llm_calls": 4.5,
+  "tokens_read": 59702.95,
+  "ds_cost": 0.028559321999999998,
+  "cold_per_q": 0.0095263725,
+  "jev_cost": 0.0,
+  "seconds": 8.772020375728607
+ },
+ "jev_rag_deepseek": {
+  "n": 20,
+  "right": 20,
+  "llm_calls": 1.0,
+  "tokens_read": 860.2,
+  "ds_cost": 0.003316128,
+  "cold_per_q": 0.0001818,
+  "jev_cost": 0.011259192,
+  "seconds": 2.0077560424804686
+ },
+ "jev_rag_qwen_local": {
+  "n": 20,
+  "right": 18,
+  "llm_calls": 1.0,
+  "tokens_read": 1034.4,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.011259192,
+  "seconds": 5.7406734228134155
+ }
+}

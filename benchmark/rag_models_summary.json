@@ -1,0 +1,86 @@
+{
+ "gemini-2.5-flash-lite:agentic_rag": {
+  "n": 50,
+  "right": 21,
+  "by_company": {
+   "AAPL": 14,
+   "MSFT": 1,
+   "NVDA": 4,
+   "AMZN": 2
+  },
+  "llm_calls": 2.68,
+  "tokens_read": 32508.06,
+  "cost": 0.1654023,
+  "seconds": 4.179662714004516
+ },
+ "gemini-2.5-flash-lite:jev_rag": {
+  "n": 50,
+  "right": 49,
+  "by_company": {
+   "AAPL": 20,
+   "MSFT": 10,
+   "NVDA": 10,
+   "AMZN": 9
+  },
+  "llm_calls": 1.0,
+  "tokens_read": 977.96,
+  "cost": 0.005545,
+  "seconds": 1.0529936790466308
+ },
+ "gpt-5-nano:agentic_rag": {
+  "n": 50,
+  "right": 34,
+  "by_company": {
+   "AAPL": 20,
+   "MSFT": 7,
+   "NVDA": 1,
+   "AMZN": 6
+  },
+  "llm_calls": 4.06,
+  "tokens_read": 64634.16,
+  "cost": 0.14004356,
+  "seconds": 34.807208800315856
+ },
+ "gpt-5-nano:jev_rag": {
+  "n": 50,
+  "right": 48,
+  "by_company": {
+   "AAPL": 19,
+   "MSFT": 10,
+   "NVDA": 10,
+   "AMZN": 9
+  },
+  "llm_calls": 1.0,
+  "tokens_read": 815.4,
+  "cost": 0.0160337,
+  "seconds": 6.156277165412903
+ },
+ "qwen3.7-flash:agentic_rag": {
+  "n": 50,
+  "right": 41,
+  "by_company": {
+   "AAPL": 20,
+   "MSFT": 3,
+   "NVDA": 8,
+   "AMZN": 10
+  },
+  "llm_calls": 4.64,
+  "tokens_read": 82427.82,
+  "cost": 0.192045558,
+  "seconds": 32.848108620643615
+ },
+ "qwen3.7-flash:jev_rag": {
+  "n": 50,
+  "right": 49,
+  "by_company": {
+   "AAPL": 20,
+   "MSFT": 10,
+   "NVDA": 10,
+   "AMZN": 9
+  },
+  "llm_calls": 1.0,
+  "tokens_read": 988.08,
+  "cost": 0.008675041999999999,
+  "seconds": 11.376178412437438
+ }
+}

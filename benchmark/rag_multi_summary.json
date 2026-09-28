@@ -1,0 +1,152 @@
+{
+ "AAPL:agentic_rag": {
+  "n": 20,
+  "right": 20,
+  "llm_calls": 4.5,
+  "tokens_read": 61235.0,
+  "ds_cost": 0.02444892,
+  "cold_per_q": 0.009929549999999999,
+  "jev_cost": 0.0,
+  "seconds": 9.498665583133697
+ },
+ "AAPL:jev_rag_deepseek": {
+  "n": 20,
+  "right": 20,
+  "llm_calls": 1.0,
+  "tokens_read": 860.2,
+  "ds_cost": 0.003316128,
+  "cold_per_q": 0.0001818,
+  "jev_cost": 0.011259192,
+  "seconds": 2.0077560424804686
+ },
+ "AAPL:jev_rag_qwen_local": {
+  "n": 20,
+  "right": 18,
+  "llm_calls": 1.0,
+  "tokens_read": 1034.4,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.011259192,
+  "seconds": 5.7406734228134155
+ },
+ "MSFT:agentic_rag": {
+  "n": 10,
+  "right": 9,
+  "llm_calls": 4.8,
+  "tokens_read": 103741.8,
+  "ds_cost": 0.027662364,
+  "cold_per_q": 0.01625919,
+  "jev_cost": 0.0,
+  "seconds": 10.803849840164185
+ },
+ "MSFT:jev_rag_deepseek": {
+  "n": 10,
+  "right": 10,
+  "llm_calls": 1.0,
+  "tokens_read": 783.8,
+  "ds_cost": 0.00143706,
+  "cold_per_q": 0.00017193,
+  "jev_cost": 0.005288682,
+  "seconds": 1.8803014993667602
+ },
+ "MSFT:jev_rag_qwen_local": {
+  "n": 10,
+  "right": 10,
+  "llm_calls": 1.0,
+  "tokens_read": 891.1,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.005288682,
+  "seconds": 14.488424706459046
+ },
+ "NVDA:agentic_rag": {
+  "n": 10,
+  "right": 9,
+  "llm_calls": 5.3,
+  "tokens_read": 101367.8,
+  "ds_cost": 0.061225668,
+  "cold_per_q": 0.01652217,
+  "jev_cost": 0.0,
+  "seconds": 15.139813041687011
+ },
+ "NVDA:jev_rag_deepseek": {
+  "n": 10,
+  "right": 10,
+  "llm_calls": 1.0,
+  "tokens_read": 819.2,
+  "ds_cost": 0.001822752,
+  "cold_per_q": 0.00018792,
+  "jev_cost": 0.005603178,
+  "seconds": 2.0124332666397096
+ },
+ "NVDA:jev_rag_qwen_local": {
+  "n": 10,
+  "right": 9,
+  "llm_calls": 1.0,
+  "tokens_read": 940.2,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.005603178,
+  "seconds": 14.095098328590392
+ },
+ "AMZN:agentic_rag": {
+  "n": 10,
+  "right": 8,
+  "llm_calls": 4.6,
+  "tokens_read": 86957.9,
+  "ds_cost": 0.04251249,
+  "cold_per_q": 0.013725104999999998,
+  "jev_cost": 0.0,
+  "seconds": 10.42436695098877
+ },
+ "AMZN:jev_rag_deepseek": {
+  "n": 10,
+  "right": 10,
+  "llm_calls": 1.0,
+  "tokens_read": 876.6,
+  "ds_cost": 0.001882188,
+  "cold_per_q": 0.00020139,
+  "jev_cost": 0.0051677220000000005,
+  "seconds": 1.8489168643951417
+ },
+ "AMZN:jev_rag_qwen_local": {
+  "n": 10,
+  "right": 8,
+  "llm_calls": 1.0,
+  "tokens_read": 1050.3,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.0051677220000000005,
+  "seconds": 22.97955279350281
+ },
+ "ALL4:agentic_rag": {
+  "n": 50,
+  "right": 46,
+  "llm_calls": 4.74,
+  "tokens_read": 82907.5,
+  "ds_cost": 0.15584944199999998,
+  "cold_per_q": 0.013273112999999998,
+  "jev_cost": 0.0,
+  "seconds": 11.073072199821473
+ },
+ "ALL4:jev_rag_deepseek": {
+  "n": 50,
+  "right": 50,
+  "llm_calls": 1.0,
+  "tokens_read": 840.0,
+  "ds_cost": 0.008458127999999999,
+  "cold_per_q": 0.000184968,
+  "jev_cost": 0.027318774,
+  "seconds": 1.9514327430725098
+ },
+ "ALL4:jev_rag_qwen_local": {
+  "n": 50,
+  "right": 45,
+  "llm_calls": 1.0,
+  "tokens_read": 990.08,
+  "ds_cost": 0.0,
+  "cold_per_q": 0.0,
+  "jev_cost": 0.027318774,
+  "seconds": 12.608884534835816
+ }
+}
