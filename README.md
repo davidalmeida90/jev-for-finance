@@ -1,12 +1,25 @@
-# Jev for Finance
+<p align="center">
+  <a href="https://davidariasfinance.com/research/is-jev-efficient-for-rag/"><img src="assets/banner.jpg" alt="Agentic RAG vs Jev RAG in finance: the agent loops through whole filings, 82,908 tokens read and 46 of 50 right; Jev picks 2 passages, 840 tokens read and 50 of 50 right" width="100%"></a>
+</p>
 
-[Jev](https://typesafe.ai) applied to financial research, starting with RAG over SEC filings. Retrieval is treated as a
-decision: code finds the filing, search keeps 30 passages, Jev picks the one that answers, and an LLM reads two. This
-repository holds that pipeline (Jev RAG), a benchmark against an agentic RAG harness on 50 analyst questions about
-four 10-Ks, and every log behind the numbers. Full write-up:
+<p align="center">
+  <a href="https://davidariasfinance.com/research/is-jev-efficient-for-rag/"><img src="https://img.shields.io/badge/Read_the_article-davidariasfinance.com-0b2545" alt="Read the article"></a>
+  <a href="https://typesafe.ai"><img src="https://img.shields.io/badge/Model-Jev_%28TypeSafe%29-e8504a" alt="Jev by TypeSafe"></a>
+  <a href="https://openrouter.ai"><img src="https://img.shields.io/badge/Access-OpenRouter-6566f1" alt="OpenRouter"></a>
+  <a href="https://github.com/vals-ai/finance-agent-v2"><img src="https://img.shields.io/badge/Baseline-Vals_AI_Finance_Agent-1a1d1b?logo=github" alt="Vals AI Finance Agent"></a>
+  <a href="https://www.sec.gov/edgar/search/"><img src="https://img.shields.io/badge/Data-SEC_EDGAR-1f4e79" alt="SEC EDGAR"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2e4bc9" alt="MIT"></a>
+  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" alt="Python 3.11+">
+  <a href="https://x.com/Davidariasfin"><img src="https://img.shields.io/badge/Follow-%40Davidariasfin-000000?logo=x&logoColor=white" alt="Follow on X"></a>
+</p>
+
+## What it is
+
+Jev for Finance applies [Jev](https://typesafe.ai) to financial research, starting with RAG over SEC filings.
+Retrieval is treated as a decision: code finds the filing, search keeps 30 passages, Jev picks the one that answers,
+and an LLM reads two. This repository holds that pipeline (Jev RAG), a benchmark against an agentic RAG harness on 50
+analyst questions about four 10-Ks, and every log behind the numbers. Full write-up:
 [Is Jev efficient for RAG?](https://davidariasfinance.com/research/is-jev-efficient-for-rag/)
-
-![Jev RAG: search keeps 30 passages, Jev picks two, the LLM writes the answer](assets/pipeline.jpg)
 
 ## Results
 
@@ -57,6 +70,8 @@ the full result. `answer()` in `jev_rag.py` returns the same dictionary for use 
 `cache/` after the first download, and a first run with vector search also downloads `intfloat/multilingual-e5-base`.
 
 ## How it works
+
+![Jev RAG: search keeps 30 passages, Jev picks two, the LLM writes the answer](assets/pipeline.jpg)
 
 **Jev RAG** follows TypeSafe's [reranking pattern](https://docs.typesafe.ai/cookbooks/rerank_typesafe):
 
@@ -117,7 +132,7 @@ benchmark/
   bench_cache/              filing texts, EDGAR indexes, cached model scores
   e2e_log*/                 every API call and every graded answer
   *_summary.json            the tables above, as JSON
-assets/                     README figure
+assets/                     banner and pipeline figure
 ```
 
 ## Limits
