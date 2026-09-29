@@ -71,8 +71,6 @@ the full result. `answer()` in `jev_rag.py` returns the same dictionary for use 
 
 ## How it works
 
-![Jev RAG: search keeps 30 passages, Jev picks two, the LLM writes the answer](assets/pipeline.jpg)
-
 **Jev RAG** follows TypeSafe's [reranking pattern](https://docs.typesafe.ai/cookbooks/rerank_typesafe):
 
 1. Code looks up the latest filing on EDGAR, since ticker, form and "latest" are lookups.
@@ -132,7 +130,7 @@ benchmark/
   bench_cache/              filing texts, EDGAR indexes, cached model scores
   e2e_log*/                 every API call and every graded answer
   *_summary.json            the tables above, as JSON
-assets/                     banner and pipeline figure
+assets/                     README banner
 ```
 
 ## Limits
