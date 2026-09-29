@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://davidariasfinance.com/research/is-jev-efficient-for-rag/"><img src="assets/banner.jpg" alt="Agentic RAG vs Jev RAG in finance: the agent loops through whole filings, 82,908 tokens read and 46 of 50 right; Jev picks 2 passages, 840 tokens read and 50 of 50 right" width="100%"></a>
+  <a href="https://davidariasfinance.com/research/is-jev-efficient-for-rag/"><img src="assets/banner.jpg" alt="Agentic RAG vs Jev RAG in finance: the agentic baseline tested here reads whole filings, 82,908 tokens read and 46 of 50 right; Jev picks 2 passages, 840 tokens read and 50 of 50 right" width="100%"></a>
 </p>
 
 <p align="center">
@@ -17,8 +17,9 @@
 
 Jev for Finance applies [Jev](https://typesafe.ai) to financial research, starting with RAG over SEC filings.
 Retrieval is treated as a decision: code finds the filing, search keeps 30 passages, Jev picks the one that answers,
-and an LLM reads two. This repository holds that pipeline (Jev RAG), a benchmark against an agentic RAG harness on 50
-analyst questions about four 10-Ks, and every log behind the numbers. Full write-up:
+and an LLM reads two. This repository holds that pipeline (Jev RAG), a benchmark against an agentic RAG baseline built
+on the Vals AI Finance Agent harness, 50 analyst questions about four 10-Ks, and every log behind the numbers. Full
+write-up:
 [Is Jev efficient for RAG?](https://davidariasfinance.com/research/is-jev-efficient-for-rag/)
 
 ## Results
@@ -32,6 +33,10 @@ filing and then read by hand.
 | Agentic RAG, DeepSeek Flash | 46 of 50 | 4.7 | 82,908 | 11.1 | $0.0031 cached, $0.0133 uncached |
 | Jev RAG, DeepSeek Flash | **50 of 50** | 1 | 840 | 2.0 | $0.0007 |
 | Jev RAG, Qwen 3.5 4B (local) | 45 of 50 | 1 | 990 | 12.6 | $0.0006 |
+
+Agentic RAG in these tables is one specific baseline: its reader LLM gets each filing whole (see
+[How it works](#how-it-works)). Its token count measures that design; an agent that reads only part of a filing would
+read fewer.
 
 Swapping the LLM on both sides:
 
@@ -89,10 +94,22 @@ p = answers["best"]["probabilities"]
 top_two = sorted(p, key=p.get, reverse=True)[:2]  # all the LLM sees
 ```
 
-**Agentic RAG** follows the [Vals AI Finance Agent](https://github.com/vals-ai/finance-agent-v2) harness. An LLM
-agent searches EDGAR, sends the whole filing to a second LLM call with a focused question, uses a calculator and
-loops, for at most 8 turns and 3 filing reads. Vals's reading tool can also take a character range; this version
-always sends the whole filing. Both sides get the company name, and the agent gets today's date.
+**Agentic RAG, as tested here**, follows the [Vals AI Finance Agent](https://github.com/vals-ai/finance-agent-v2)
+harness. An LLM agent chooses the company, form and fiscal year, searches EDGAR, and calls `read_filing` with a
+filing and a focused question. A second LLM call then reads that filing whole and answers the question. It
+also has a calculator and loops for at most 8 turns and 3 filing reads. Both pipelines get the company name, and the
+agent gets today's date (Vals's own prompt also fixes a date).
+
+Why whole filings: in the Vals harness, `retrieve_information` passes the entire stored document to an LLM unless the
+agent adds optional character ranges, and the agent never sees the text itself (its page tool only replies "saved
+under key X"), so any range would be a guess at character positions. This baseline keeps Vals's default and leaves
+the range option out. DeepSeek Flash's context window fits a whole 10-K, and its prompt cache makes a second read of
+the same filing cheap, which is why cached and uncached costs are both reported.
+
+What that choice affects: tokens, cost and speed. An agent that searches inside a filing or passes ranges would read
+fewer tokens; that variant wasn't tested. What it doesn't affect: the agent's wrong-year misses, 21 of its 29 misses
+across the three LLMs. Those happen before any reading, when the agent picks last year's filing; in the DeepSeek
+Flash runs it then read those filings correctly.
 
 ## Reproduce the benchmark
 
@@ -136,6 +153,8 @@ assets/                     README banner
 ## Limits
 
 - 50 questions on four US large caps with three budget LLMs show a pattern and don't settle it.
+- One agentic baseline was tested, and it reads filings whole. Agents that retrieve inside a filing are a different,
+  cheaper design, so the token and cost gaps here don't carry over to them.
 - Jev's existence check can sit close to its 0.5 threshold. On Microsoft's R&D question it returned 0.47 in the
   benchmark and 0.52 when the filing was labelled with its EDGAR name, which kept the wrong 30 passages. `jev_rag.py`
   labels filings the way the benchmark did; a higher threshold or an unconditional second round is the safer choice.
